@@ -1,0 +1,13 @@
+pipeline:
+  name: VibrationAnalysisPipeline
+  steps:
+    - task: load_file
+    - task: preprocess_signal
+    - task: fft_analysis
+    - task: waterfall_analysis
+    - task: feature_extraction
+    - task: fault_detection
+  self_healing:
+    retry_failed_tasks: true
+    fallback_preprocessing: "apply_hanning_window"
+    escalate_low_confidence: true
