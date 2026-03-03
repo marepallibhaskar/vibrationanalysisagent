@@ -1,0 +1,31 @@
+tools:
+  - name: FileLoader
+    library: "pandas"
+
+  - name: SignalPreprocessor
+    library: "numpy, scipy"
+
+  - name: FFTTool
+    library: "numpy.fft"
+
+  - name: WaterfallTool
+    library: "scipy.signal.spectrogram"
+
+  - name: FeatureExtractor
+    library: "numpy, pandas"
+
+  - name: TensorFlowModel
+    library: "tensorflow"
+    model_path: "models/fault_detection.h5"
+
+  - name: DocParser
+    library: "json"
+
+  - name: Plotter
+    library: "matplotlib"
+
+  - name: MemoryStore
+    library: "sqlite"
+
+  - name: Notifier
+    library: "smtplib"
