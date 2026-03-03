@@ -1,0 +1,36 @@
+agents:
+  - name: LoaderAgent
+    role: "File ingestion specialist"
+    tools: [FileLoader]
+
+  - name: PreprocessAgent
+    role: "Signal conditioning specialist"
+    tools: [SignalPreprocessor]
+
+  - name: FFTAgent
+    role: "Spectral analysis specialist"
+    tools: [FFTTool, WaterfallTool]
+
+  - name: FeaturesAgent
+    role: "Feature extraction specialist"
+    tools: [FeatureExtractor]
+
+  - name: FaultAgent
+    role: "Fault detection specialist"
+    tools: [TensorFlowModel]
+
+  - name: DesignDocAgent
+    role: "Design document parser"
+    tools: [DocParser]
+
+  - name: ReportAgent
+    role: "Visualization and reasoning specialist"
+    tools: [Plotter]
+
+  - name: MemoryAgent
+    role: "Context keeper"
+    tools: [MemoryStore]
+
+  - name: AlertAgent
+    role: "Notification specialist"
+    tools: [Notifier]
