@@ -1,0 +1,36 @@
+tasks:
+  - id: load_file
+    agent: LoaderAgent
+    tool: FileLoader
+    input: file_path
+    output: raw_signal
+
+  - id: preprocess_signal
+    agent: PreprocessAgent
+    tool: SignalPreprocessor
+    input: raw_signal
+    output: clean_signal
+
+  - id: fft_analysis
+    agent: FFTAgent
+    tool: FFTTool
+    input: clean_signal
+    output: fft_result
+
+  - id: waterfall_analysis
+    agent: FFTAgent
+    tool: WaterfallTool
+    input: clean_signal
+    output: waterfall_result
+
+  - id: feature_extraction
+    agent: FeaturesAgent
+    tool: FeatureExtractor
+    input: [clean_signal, fft_result]
+    output: features
+
+  - id: fault_detection
+    agent: FaultAgent
+    tool: TensorFlowModel
+    input: features
+    output: fault_report
